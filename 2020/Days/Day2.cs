@@ -1,13 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace _2020.Days
 {
-    public class Day2
+    public class Day2 : IDay<long>
     {
 
-        public int Part1(string[] input)
+        public long Part1(string[] input)
         {
             return PartBody(input, ValidationLogicPartOne);
         }
@@ -17,7 +18,7 @@ namespace _2020.Days
             return PartBody(input, ValidationLogicPartTwo);
         }
 
-        private int PartBody(string[] input, Func<Match, bool> validationLogic)
+        private static int PartBody(IEnumerable<string> input, Func<Match, bool> validationLogic)
         {
             var regex = new Regex(@"(\d\d*)-(\d\d*) (.): (.+)");
             var validPasswords = input
@@ -28,20 +29,20 @@ namespace _2020.Days
             return validPasswords.Count();
         }
 
-        private bool ValidationLogicPartOne(Match match)
+        private static bool ValidationLogicPartOne(Match match)
         {
             var (min, max, letter, password) = ParseLine(match);
 
-            var occurences = password.Count(x => x == letter);
-            return occurences >= min && occurences <= max;
+            var occurrences = password.Count(x => x == letter);
+            return occurrences >= min && occurrences <= max;
         }
 
-        private bool ValidationLogicPartTwo(Match match)
+        private static bool ValidationLogicPartTwo(Match match)
         {
             var (min, max, letter, password) = ParseLine(match);
 
-            var occurences = Convert.ToInt32(password.ElementAtOrDefault(min - 1) == letter) + Convert.ToInt32(password.ElementAtOrDefault(max - 1) == letter);
-            return occurences == 1;
+            var occurrences = Convert.ToInt32(password.ElementAtOrDefault(min - 1) == letter) + Convert.ToInt32(password.ElementAtOrDefault(max - 1) == letter);
+            return occurrences == 1;
         }
 
         private static (int min, int max, char letter, string password) ParseLine(Match match)

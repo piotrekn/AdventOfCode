@@ -3,13 +3,13 @@ using System.Linq;
 
 namespace _2020.Days
 {
-    public class Day1
+    public class Day1 : IDay<long>
     {
-        public long FixMyExpanse(string[] input)
+        public long Part1(string[] input)
         {
             var numbers = input
                 .Where(x => x.Length <= 4)
-                .Select(x => int.Parse(x))
+                .Select(int.Parse)
                 .ToDictionary(x => x, x => x);
 
             var theNumbers = numbers.Keys.Where(x => numbers.ContainsKey(2020 - x)).ToList();
@@ -19,11 +19,11 @@ namespace _2020.Days
             return theNumbers[0] * theNumbers[1];
         }
 
-        public long FixMyExpanseWithTreeNumbers(string[] input)
+        public long Part2(string[] input)
         {
             var numbers = input
                 .Where(x => x.Length <= 4)
-                .Select(x => int.Parse(x))
+                .Select(int.Parse)
                 .ToDictionary(x => x, x => x);
 
             // brute fore it!
