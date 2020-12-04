@@ -9,24 +9,14 @@ namespace _2020.Tests
     public class FileDataAttribute : DataAttribute
     {
         private readonly string _filePath;
-        private readonly string _propertyName;
 
         /// <summary>
-        /// Load data from a JSON file as the data source for a theory
+        /// Load data from a flat file as the data source for a theory
         /// </summary>
-        /// <param name="filePath">The absolute or relative path to the JSON file to load</param>
+        /// <param name="filePath">The absolute or relative path to the file to load</param>
         public FileDataAttribute(string filePath)
-            : this(filePath, null) { }
-
-        /// <summary>
-        /// Load data from a JSON file as the data source for a theory
-        /// </summary>
-        /// <param name="filePath">The absolute or relative path to the JSON file to load</param>
-        /// <param name="propertyName">The name of the property on the JSON file that contains the data for the test</param>
-        public FileDataAttribute(string filePath, string propertyName)
         {
             _filePath = filePath;
-            _propertyName = propertyName;
         }
 
         /// <inheritDoc />

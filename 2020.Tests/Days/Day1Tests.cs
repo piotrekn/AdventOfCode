@@ -19,7 +19,7 @@ namespace _2020.Tests.Days
         public void Part1(string lines)
         {
             var day1 = new Day1();
-            _testOutputHelper.WriteLine($"answer for part 1 is: {day1.FixMyExpanse(lines.Split(Environment.NewLine))}");
+            _testOutputHelper.WriteLine($"answer for part 1 is: {day1.Part1(lines.Split(Environment.NewLine))}");
         }
 
         [Theory]
