@@ -74,7 +74,7 @@ namespace _2020.Tests
         private static string[] ParseParameters(Match match)
         {
             var parameters = match.Groups.Values.ElementAt(1).Value.Split('|').ToList();
-            var testCase = match.Groups.Values.ElementAt(2).Value;
+            var testCase = match.Groups.Values.ElementAt(2).Value.TrimEnd();
 
             parameters.Add(testCase);
             return parameters.ToArray();
