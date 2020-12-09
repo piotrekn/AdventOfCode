@@ -15,7 +15,7 @@ namespace _2020.Tests.Days
         [BulkFileData("TestCases/Day7_TestCasePack.txt", "puzzleinput")]
         public void Part1_pack(string testCaseName, string expectedResult, string _, string fileContent)
         {
-            var result = Day.Part1(ParseFileContent(fileContent));
+            var result = Day.Part1(Day.ParseFileContent(fileContent));
 
             Assert.True(expectedResult == result.ToString(), $"\"{testCaseName}\" test case expected: {expectedResult}, actual: {result}");
         }
@@ -25,7 +25,7 @@ namespace _2020.Tests.Days
         [BulkFileData("TestCases/Day7_TestCasePack.txt", "puzzleinput")]
         public void Part2_Pack(string testCaseName, string _, string expectedResult, string fileContent)
         {
-            var result = Day.Part2(ParseFileContent(fileContent));
+            var result = Day.Part2(Day.ParseFileContent(fileContent));
             Assert.True(expectedResult == result.ToString(), $"\"{testCaseName}\" test case expected: {expectedResult}, actual: {result}");
         }
     }

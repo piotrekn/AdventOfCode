@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace _2020.Days
 {
-    public class Day6 : IDay<int, string>
+    public class Day6 : DayBase, IDay<int, string>
     {
         public int Part1(string input)
         {

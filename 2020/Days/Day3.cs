@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace _2020.Days
 {
-    public class Day3 : IDay<long>
+    public class Day3 : DayBase, IDay<long>
     {
         private const char TreeChar = '#';
 

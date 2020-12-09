@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace _2020.Days
 {
-    public class Day5 : IDay<int, string[]>
+    public class Day5 : DayBase, IDay<int, string[]>
     {
         public int Part1(string[] input)
         {

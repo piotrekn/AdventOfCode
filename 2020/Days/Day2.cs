@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 namespace _2020.Days
 {
-    public class Day2 : IDay<long>
+    public class Day2 : DayBase, IDay<long>
     {
 
         public long Part1(string[] input)

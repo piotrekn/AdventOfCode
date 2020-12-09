@@ -6,7 +6,7 @@ using _2020.Models;
 
 namespace _2020.Days
 {
-    public class Day7 : IDay<int, string[]>
+    public class Day7 : DayBase, IDay<int, string[]>
     {
         private const string MyBag = "shiny gold";
         private const string MainRegex = "(.+) bags contain (.+)";
