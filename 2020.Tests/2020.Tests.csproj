@@ -58,6 +58,9 @@
     <None Update="TestCases\Day7_TestCasePack.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="TestCases\Day10_TestCasePack.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="TestCases\Day9_TestCasePack.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
