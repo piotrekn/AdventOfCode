@@ -16,6 +16,7 @@
 
         public T Part2(TData input);
     }
+
     public interface IDayWithParameter<out T, in TData, in TParam>
     {
         public T Part1(TData input, TParam parameter);
