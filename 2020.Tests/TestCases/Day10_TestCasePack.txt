@@ -10,7 +10,7 @@
 6
 12
 4
-===example_small|16|4===
+===example_small|12|4===
 3
 4
 5

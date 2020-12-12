@@ -1,0 +1,1 @@
+dotnet test -l:"trx;LogFileName=..\TestsOutput.trx" -l:"html;;LogFileName=..\TestsOutput.html"
