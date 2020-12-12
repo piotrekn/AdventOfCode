@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Globalization;
-using System.Linq;
-using System.Numerics;
 
 namespace _2020.Days
 {
@@ -34,11 +30,10 @@ namespace _2020.Days
 
     public class Ship
     {
-        private Point _waypoint;
-
+        private readonly bool _hasNoWaypoint;
+        private Point _currentVector;
         private Point _currentPosition;
         public Point CurrentPosition => _currentPosition;
-        public Point CurrentVector { get; private set; }
 
         public static Point North => new Point(0, 1);
         public static Point South => new Point(0, -1);
@@ -47,61 +42,54 @@ namespace _2020.Days
 
         public Ship()
         {
-            CurrentVector = East;
+            _hasNoWaypoint = true;
+            _currentVector = East;
             _currentPosition = new Point(0, 0);
         }
 
         public Ship(Point waypoint) : this()
         {
-            _waypoint = waypoint;
+            _hasNoWaypoint = false;
+            _currentVector = waypoint;
         }
 
         public void Move(string step)
         {
-            var offset = int.Parse(step.Substring(1, step.Length - 1));
+            var offset = int.Parse(step[1..]);
             switch (step[0])
             {
                 case 'N':
-                    if (_waypoint.IsEmpty)
+                    if (_hasNoWaypoint)
                         _currentPosition.Offset(North.X * offset, North.Y * offset);
                     else
-                        _waypoint.Offset(0, offset);
+                        _currentVector.Offset(0, offset);
                     break;
                 case 'S':
-                    if (_waypoint.IsEmpty)
+                    if (_hasNoWaypoint)
                         _currentPosition.Offset(South.X * offset, South.Y * offset);
                     else
-                        _waypoint.Offset(0, -offset);
+                        _currentVector.Offset(0, -offset);
                     break;
                 case 'W':
-                    if (_waypoint.IsEmpty)
+                    if (_hasNoWaypoint)
                         _currentPosition.Offset(West.X * offset, West.Y * offset);
                     else
-                        _waypoint.Offset(-offset, 0);
+                        _currentVector.Offset(-offset, 0);
                     break;
                 case 'E':
-                    if (_waypoint.IsEmpty)
+                    if (_hasNoWaypoint)
                         _currentPosition.Offset(East.X * offset, East.Y * offset);
                     else
-                        _waypoint.Offset(offset, 0);
+                        _currentVector.Offset(offset, 0);
                     break;
                 case 'R':
-                    if (_waypoint.IsEmpty)
-                        CurrentVector = CurrentVector.Rotate(-offset);
-                    else
-                        _waypoint = _waypoint.Rotate(-offset);
+                    _currentVector = _currentVector.Rotate(-offset);
                     break;
                 case 'L':
-                    if (_waypoint.IsEmpty)
-                        CurrentVector = CurrentVector.Rotate(offset);
-                    else
-                        _waypoint = _waypoint.Rotate(offset);
+                    _currentVector = _currentVector.Rotate(offset);
                     break;
                 case 'F':
-                    if (_waypoint.IsEmpty)
-                        _currentPosition.Offset(CurrentVector.X * offset, CurrentVector.Y * offset);
-                    else
-                        _currentPosition.Offset(_waypoint.X * offset, _waypoint.Y * offset);
+                    _currentPosition.Offset(_currentVector.X * offset, _currentVector.Y * offset);
                     break;
             }
         }
