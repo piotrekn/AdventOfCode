@@ -1,10 +1,10 @@
-===example1|25|286===
+@==example1|25|286===
 F10
 N3
 F7
 R90
 F11
-===puzzleinput|1565|78883===
+@==puzzleinput|1565|78883===
 E5
 R90
 E5

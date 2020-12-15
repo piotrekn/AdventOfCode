@@ -1,8 +1,8 @@
-===example1|820|===
+@==example1|820|===
 BFFFBBFRRR
 FFFBBBFRRR
 BBFFBBFRLL
-===mydata|998|676===
+@==mydata|998|676===
 BFBBBBBLLR
 BBFFBBFRRL
 FBFBFFFRRL

@@ -58,7 +58,7 @@ namespace _2020.Tests
             //    return new[] { new[] { fileContent } };
             //}
 
-            var match = Regex.Matches(fileContent, "===([^=]+)===(?:(?:\r\n)|(?:\n))([^=]*)");
+            var match = Regex.Matches(fileContent, "@==([^=]+)===(?:(?:\r\n)|(?:\n))([^@]*)");
 
             var testCases = match.Select(ParseParameters);
 

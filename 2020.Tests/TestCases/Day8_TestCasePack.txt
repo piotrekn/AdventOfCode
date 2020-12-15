@@ -1,4 +1,4 @@
-===example1|5|8===
+@==example1|5|8===
 nop +0
 acc +1
 jmp +4
@@ -8,7 +8,7 @@ acc -99
 acc +1
 jmp -4
 acc +6
-===puzzleinput|2051|2304===
+@==puzzleinput|2051|2304===
 jmp +583
 acc +9
 jmp +525

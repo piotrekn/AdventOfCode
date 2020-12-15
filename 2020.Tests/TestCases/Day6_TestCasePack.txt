@@ -1,4 +1,4 @@
-===example1|11|6===
+@==example1|11|6===
 abc
 
 a
@@ -14,7 +14,7 @@ a
 a
 
 b
-===puzzleinput|6551|3358===
+@==puzzleinput|6551|3358===
 nvlyak
 nyvha
 yaen
