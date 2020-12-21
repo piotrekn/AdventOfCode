@@ -25,6 +25,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="TestCases\Day21_TestCasePack.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="TestCases\Day19_TestCasePack.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
