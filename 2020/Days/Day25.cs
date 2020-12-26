@@ -2,7 +2,7 @@
 
 namespace _2020.Days
 {
-    public class Day24 : DayBase, IDay<long, string>
+    public class Day25 : DayBase, IDay<long, string>
     {
         private const long CardReminderNumber = 20201227;
 
