@@ -28,6 +28,9 @@
     <None Update="TestCases\Day24_TestCasePack.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="TestCases\Day23_TestCasePack.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="TestCases\Day22_TestCasePack.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
